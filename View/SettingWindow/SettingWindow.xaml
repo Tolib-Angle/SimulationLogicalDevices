@@ -1,0 +1,175 @@
+﻿<Window x:Class="SimulatorLogicDevices.View.SettingWindow.SettingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimulatorLogicDevices.View.SettingWindow"
+        xmlns:vm="clr-namespace:SimulatorLogicDevices.ViewModel.ControlPages"
+        mc:Ignorable="d"
+        Name="MainSettingWindow" WindowStyle="None" Width="1080" Height="720" Background="{DynamicResource BackgroundColor}"
+        MaxWidth="1080" MaxHeight="720" ResizeMode="NoResize" MinHeight="720" MinWidth="1080" FontFamily="Georgia" FontSize="14"
+        WindowStartupLocation="CenterScreen">
+    <!-- pages data context -->
+    <Window.DataContext>
+        <vm:SettingWindowPagesViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Border BorderBrush="{DynamicResource DesingColor}" BorderThickness="2">
+            <Grid>
+                <!-- top bar and workspace -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="2"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <!-- top bar -->
+                <Grid Grid.Row="0">
+                    <!-- window name and window manager buttons -->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition x:Name="Header" Width="1*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <!-- Window name -->
+                    <Grid Grid.Column="0" MouseLeftButtonDown="DragMoveWindow" Background="Transparent">
+                        <TextBlock Name="WindowName" Text="{DynamicResource TextSetting}" Style="{DynamicResource HeadingTextStyle}"/>
+                    </Grid>
+                    <!-- Window  manager button -->
+                    <Grid Grid.Column="1">
+                        <Button Click="CloseSettingWindow" ToolTip="{DynamicResource TextCloseSettingTT}" Focusable="False" Template="{DynamicResource CloseButtonStyle}"/>
+                    </Grid>
+                </Grid>
+                <!--desing block -->
+                <Grid Grid.Row="1" Height="2" Background="{DynamicResource DesingColor}"/>
+                <!-- workspace -->
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="2"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <!-- mune -->
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="2"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <StackPanel Orientation="Vertical" Margin="10,0,0,0" Width="320">
+                                <!-- file -->
+                                <ToggleButton Name="FileButton" Click="FileButtonClick" Focusable="False" Content="{DynamicResource TextFile}" Template="{DynamicResource MenuButtonsStyle}"/>
+                                <Grid Name="FileTabs" Visibility="Collapsed" Margin="10,0,10,0">
+                                    <StackPanel Orientation="Vertical">
+                                        <Button Name="OpenButton" Template="{DynamicResource WindowsTabsButtonsStyle}" Command="{Binding OpenOpenPage}">
+                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                                <Image Width="20" Height="20" Source="{DynamicResource OpenIcon}"/>
+                                                <TextBlock Text="{DynamicResource TextOpenFile}" Style="{DynamicResource InsideButtonsNameStyle}"/>
+                                                <TextBlock Text="{DynamicResource TextHotkeyOpen}" Style="{DynamicResource InsideButtonsKeysStyle}"/>
+                                            </StackPanel>
+                                        </Button>
+                                        <!--<Button Name="CreateButton" Template="{DynamicResource WindowsTabsButtonsStyle}" Command="{Binding OpenCreatePage}">
+                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                                <Image Width="20" Height="20" Source="{DynamicResource CreateIcon}"/>
+                                                <TextBlock Text="{DynamicResource TextCreate}" Style="{DynamicResource InsideButtonsNameStyle}"/>
+                                                <TextBlock Text="{DynamicResource TextHotkeyCreate}" Style="{DynamicResource InsideButtonsKeysStyle}"/>
+                                            </StackPanel>
+                                        </Button>-->
+                                        <Grid Height="2" Margin="0,2,0,2" Background="{DynamicResource DesingColor}"/>
+                                        <Button Click="SaveCurrentProject" Focusable="False" Template="{DynamicResource WindowsTabsButtonsStyle}">
+                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                                <Image Width="20" Height="20" Source="{DynamicResource SaveIcon}"/>
+                                                <TextBlock Text="{DynamicResource TextSave}" Style="{DynamicResource InsideButtonsNameStyle}"/>
+                                                <TextBlock Text="{DynamicResource TextHotkeySave}" Style="{DynamicResource InsideButtonsKeysStyle}"/>
+                                            </StackPanel>
+                                        </Button>
+                                        <!--<Button Click="SaveAllProject" Focusable="False" Template="{DynamicResource WindowsTabsButtonsStyle}">
+                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                                <Image Width="20" Height="20" Source="{DynamicResource SaveAllIcon}"/>
+                                                <TextBlock Text="{DynamicResource TextSaveAll}" Style="{DynamicResource InsideButtonsNameStyle}"/>
+                                                <TextBlock Text="{DynamicResource TextHotkeySaveAll}" Style="{DynamicResource InsideButtonsKeysStyle}"/>
+                                            </StackPanel>
+                                        </Button>-->
+                                    </StackPanel>
+                                </Grid>
+                                <!-- setting -->
+                                <ToggleButton Name="SettingButton" Click="SettingButtonClick" Focusable="False" Content="{DynamicResource TextSetting}" Template="{DynamicResource MenuButtonsStyle}"/>
+                                <Grid Name="SettingTabs" Visibility="Collapsed" Margin="10,0,0,0">
+                                    <StackPanel Orientation="Vertical">
+                                        <Button Name="ThemeButton" Template="{DynamicResource WindowsTabsButtonsStyle}" Command="{Binding OpenThemePage}">
+                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                                <Image Width="20" Height="20" Source="{DynamicResource ThemeIcon}"/>
+                                                <TextBlock Text="{DynamicResource TextTheme}" Style="{DynamicResource InsideButtonsNameStyle}"/>
+                                                <TextBlock Text="{DynamicResource TextHotkeyTheme}" Style="{DynamicResource InsideButtonsKeysStyle}"/>
+                                            </StackPanel>
+                                        </Button>
+                                        <Button x:Name="LanguageButton" Template="{DynamicResource WindowsTabsButtonsStyle}" Command="{Binding OpenLanguagePage}">
+                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                                <Image Width="20" Height="20" Source="{DynamicResource LanguageIcon}"/>
+                                                <TextBlock Text="{DynamicResource TextLanguage}" Style="{DynamicResource InsideButtonsNameStyle}"/>
+                                                <TextBlock Text="{DynamicResource TextHotkeyLanguage}" Style="{DynamicResource InsideButtonsKeysStyle}"/>
+                                            </StackPanel>
+                                        </Button>
+                                    </StackPanel>
+                                </Grid>
+                                <!-- help -->
+                                <ToggleButton Name="HelpButton" Click="HelpButtonClick" Focusable="False" Content="{DynamicResource TextHelp}" Template="{DynamicResource MenuButtonsStyle}"/>
+                                <Grid Name="HelpTabs" Visibility="Collapsed" Margin="10,0,0,0">
+                                    <StackPanel Orientation="Vertical">
+                                        <Button Name="DocumentationButton" Template="{DynamicResource WindowsTabsButtonsStyle}" Command="{Binding OpenDocumentationPage}">
+                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                                <Image Width="20" Height="20"/>
+                                                <TextBlock Text="{DynamicResource TextDocumentation}" Style="{DynamicResource InsideButtonsNameStyle}"/>
+                                                <TextBlock Text="{DynamicResource TextHotkeyDocum}" Style="{DynamicResource InsideButtonsKeysStyle}"/>
+                                            </StackPanel>
+                                        </Button>
+                                        <Button x:Name="HotKeyButton" Template="{DynamicResource WindowsTabsButtonsStyle}" Command="{Binding OpenHotkeyPage}">
+                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                                <Image Width="20" Height="20" Source="{DynamicResource HotKeyIcon}"/>
+                                                <TextBlock Text="{DynamicResource TextHotKey}" Style="{DynamicResource InsideButtonsNameStyle}"/>
+                                                <TextBlock Text="{DynamicResource TextHotkeyHotkey}" Style="{DynamicResource InsideButtonsKeysStyle}"/>
+                                            </StackPanel>
+                                        </Button>
+                                        <Button x:Name="ExamplesButton" Template="{DynamicResource WindowsTabsButtonsStyle}" Command="{Binding OpenExamplesPage}">
+                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                                <Image Width="20" Height="20"/>
+                                                <TextBlock Text="{DynamicResource TextExamples}" Style="{DynamicResource InsideButtonsNameStyle}"/>
+                                                <TextBlock Text="{DynamicResource TextHotkeyExamples}" Style="{DynamicResource InsideButtonsKeysStyle}"/>
+                                            </StackPanel>
+                                        </Button>
+                                    </StackPanel>
+                                </Grid>
+                            </StackPanel>
+                        </Grid>
+                        <Grid Grid.Row="1" Background="{DynamicResource DesingColor}"/>
+                        <Grid Grid.Row="2" Margin="0,8,0,8">
+                            <TextBlock x:Name="ProgrammVersion" Style="{DynamicResource VersionStyle}"/>
+                        </Grid>
+                    </Grid>
+                    <!-- desing block -->
+                    <Grid Grid.Column="1" Background="{DynamicResource DesingColor}"/>
+                    <!-- workspace -->
+                    <Grid Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="2"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <!--desing block -->
+                        <Grid Grid.Row="1" Background="{DynamicResource DesingColor}"/>
+                        <!-- buttons -->
+                        <Grid Grid.Row="2">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,8,10,8">
+                                <Button x:Name="OkButton" Click="SaveSettings" Content="{DynamicResource TextOk}" Focusable="False" Template="{DynamicResource TopMenuButtonsStyle}"/>
+                                <Button Click="CloseSettingWindow" Focusable="False" Content="{DynamicResource TextCancel}" Template="{DynamicResource TopMenuButtonsStyle}"/>
+                            </StackPanel>
+                        </Grid>
+                        <!-- pages -->
+                        <Grid Grid.Row="0">
+                            <Frame NavigationUIVisibility="Hidden" Content="{Binding CurrentPage}"/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

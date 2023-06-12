@@ -1,0 +1,220 @@
+﻿<Window x:Class="SimulatorLogicDevices.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimulatorLogicDevices"
+        xmlns:vml="clr-namespace:SimulatorLogicDevices.ViewModel.ControlPages"
+        mc:Ignorable="d"
+        Name="_MainWindow" MinHeight="720" MinWidth="1080" FontFamily="Georgia" WindowStyle="None" 
+        Background="{DynamicResource BackgroundColor}" FontSize="14" FontStyle="Normal"
+        WindowStartupLocation="CenterScreen" AllowsTransparency="True" ResizeMode="CanResizeWithGrip">
+    <Window.DataContext>
+        <vml:MainWindowPagesViewModel/>
+    </Window.DataContext>
+    <!-- binding hot key with function -->
+    <Window.CommandBindings>
+        <CommandBinding Command="{StaticResource ClickFileButton}" Executed="FileButtonClick"/>
+        <CommandBinding Command="{StaticResource ClickSettingButton}" Executed="SettingButtonClick"/>
+        <CommandBinding Command="{StaticResource ClickHelpButton}" Executed="HelpButtonClick"/>
+        <CommandBinding Command="{StaticResource CloseButton}" Executed="CloseProgramm"/>
+        <CommandBinding Command="{StaticResource ClickCreateButton}" Executed="CreateButtonClick"/>
+        <CommandBinding Command="{StaticResource ClickProperButton}" Executed="ExampleButtonClick"/>
+        <CommandBinding Command="{StaticResource ClickThemeButton}" Executed="SettingButtonClick"/>
+        <CommandBinding Command="{StaticResource ClickLanguageButton}" Executed="LanguageHotKeyClick"/>
+        <CommandBinding Command="{StaticResource ClickDocumButton}" Executed="HelpButtonClick"/>
+        <CommandBinding Command="{StaticResource ClickHotkeyButton}" Executed="HotkeyHotKeyClick"/>
+        <CommandBinding Command="{StaticResource DeleteDevice}" Executed="DeleteActiveDevice"/>
+    </Window.CommandBindings>
+    <!-- set hot key -->
+    <Window.InputBindings>
+        <KeyBinding Command="{StaticResource ClickFileButton}" Gesture="Ctrl+F" Key="F" Modifiers="Ctrl"/>
+        <KeyBinding Command="{StaticResource ClickSettingButton}" Gesture="Ctrl+G" Key="G" Modifiers="Ctrl"/>
+        <KeyBinding Command="{StaticResource ClickHelpButton}" Gesture="Ctrl+H" Key="H" Modifiers="Ctrl"/>
+        <KeyBinding Command="{StaticResource CloseButton}" Gesture="Alt+F4" Key="F4" Modifiers="Alt"/>
+        <KeyBinding Command="{StaticResource ClickCreateButton}" Gesture="Ctrl+R" Key="R" Modifiers="Ctrl"/>
+        <KeyBinding Command="{StaticResource ClickProperButton}" Gesture="Ctrl+P" Key="P" Modifiers="Ctrl"/>
+        <KeyBinding Command="{StaticResource ClickThemeButton}" Gesture="Ctrl+T" Key="T" Modifiers="Ctrl"/>
+        <KeyBinding Command="{StaticResource ClickLanguageButton}" Gesture="Ctrl+L" Key="L" Modifiers="Ctrl"/>
+        <KeyBinding Command="{StaticResource ClickDocumButton}" Gesture="Ctrl+D" Key="D" Modifiers="Ctrl"/>
+        <KeyBinding Command="{StaticResource ClickHotkeyButton}" Gesture="Ctrl+K" Key="K" Modifiers="Ctrl"/>
+        <KeyBinding Command="{StaticResource DeleteDevice}" Gesture="Delete" Key="Delete"/>
+    </Window.InputBindings>
+    <!-- main window form -->
+    <Grid>
+        <!-- top bar and workspace -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <!-- top bar -->
+        <Grid Grid.Row="0">
+            <!-- menu, project name and window manager buttons -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <!-- logo and menu-->
+            <Grid Grid.Column="0">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{DynamicResource LogoIcon}" Width="60" Margin="10,0,10,0"/>
+                    <Button Click="FileButtonClick" Focusable="False" ToolTip="{DynamicResource TextFileTT}" 
+                            Content="{DynamicResource TextFile}" Template="{DynamicResource TopMenuButtonsStyle}"/>
+                    <Button Click="SettingButtonClick" Focusable="False" ToolTip="{DynamicResource TextSettingTT}" 
+                            Content="{DynamicResource TextSetting}" Template="{DynamicResource TopMenuButtonsStyle}"/>
+                    <Button Click="HelpButtonClick" Focusable="False" ToolTip="{DynamicResource TextHelpTT}" 
+                            Content="{DynamicResource TextHelp}" Template="{DynamicResource TopMenuButtonsStyle}"/>
+                </StackPanel>
+            </Grid>
+            <!--project name and space for drag move-->
+            <Grid Grid.Column="1" MouseLeftButtonDown="DragMoveMainWindow">
+                <TextBlock x:Name="ProjectName" Style="{DynamicResource IndexTextStyle}"/>
+            </Grid>
+            <!--window manager buttons-->
+            <Grid Grid.Column="2">
+                <StackPanel Orientation="Horizontal">
+                    <Button Click="RollUpWindow" ToolTip="{DynamicResource TextRollUpTT}" Focusable="False" 
+                            Template="{DynamicResource RollUpButtonStyle}"/>
+                    <ToggleButton Click="UnwrapWindow" ToolTip="{DynamicResource TextCollapseToWindowTT}" 
+                                  Focusable="False" Template="{DynamicResource UnwrapButtonStyle}"/>
+                    <Button Click="CloseProgramm" ToolTip="{DynamicResource TextCloseTT}" Focusable="False" 
+                            Template="{DynamicResource CloseButtonStyle}"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <!-- quick access -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Margin="0,2,0,2">
+                <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                    <Button Click="CreateButtonClick" ToolTip="{DynamicResource TextCreateTT}" 
+                    Focusable="False" Template="{DynamicResource AddProjectButtonStyle}" Margin="2,0,0,0"/>
+                    <Button Click="FileButtonClick" ToolTip="{DynamicResource TextOpenTT}" 
+                    Focusable="False" Template="{DynamicResource OpenProjectButtonStyle}" Margin="2,0,0,0"/>
+                    <Button Click="FileButtonClick" Focusable="False" ToolTip="{DynamicResource TextSaveTT}" 
+                    Template="{DynamicResource SaveProjectButtonStyle}" Margin="2,0,0,0"/>
+                    <Grid Width="2" Background="{DynamicResource DesingColor}" Margin="2,0,0,0"/>
+                    <Button Click="ExampleButtonClick" ToolTip="{DynamicResource TextExampleTT}" 
+                    Focusable="False" Template="{DynamicResource ProperProjectButtonStyle}" Margin="2,0,0,0"/>
+                </StackPanel>
+            </Grid>
+            <!-- search and feedback -->
+            <Grid Grid.Column="1">
+                <StackPanel Orientation="Horizontal">
+                    <Button Click="DeleteActiveDevice" Focusable="False" ToolTip="{DynamicResource TextDeleteDeviceTT}" 
+                    Template="{DynamicResource DeleteDeviceButtonStyle}" Margin="10,0,0,0"/>
+                    <Button Focusable="False" ToolTip="{DynamicResource TextFeedbackTT}" 
+                    Template="{DynamicResource FeedbackProjectButtonStyle}" Margin="10,0,10,0"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <!-- workspace -->
+        <Grid Grid.Row="2">
+            <!-- devices list and workspace -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <!-- workspace -->
+            <Grid Grid.Column="0">
+                <!-- projects bar, canvas and info space -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Name="Infospace" Height="150"/>
+                </Grid.RowDefinitions>
+                <!-- top bar-->
+                <Grid Grid.Row="0">
+                    <StackPanel Name="WorkspaceTopBar" Orientation="Horizontal" Margin="0,6,30,0">
+                        <Grid Width="30"/>
+                        <Button Focusable="False" ToolTip="{DynamicResource TextTrainingPageTT}" Width="120" Template="{DynamicResource DevicePagesButtonsStyle}" Command="{Binding CurrentDevicePage}">
+                            <StackPanel Orientation="Horizontal" Margin="4,0,4,0">
+                                <TextBlock Width="120" Text="{DynamicResource TextTrainingPageTT}" Style="{DynamicResource PagesButtonsStyle}"/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+                <!-- canvas and input/output -->
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="30"/>
+                    </Grid.ColumnDefinitions>
+                    <!-- canvas -->
+                    <Grid Grid.Column="1">
+                        <Border BorderBrush="{DynamicResource FocusingColor}" BorderThickness="0,2,0,2">
+                            <Grid>
+                                <Frame NavigationUIVisibility="Hidden" Source="\View\MainWindow\Pages\MainPage.xaml"/>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <!-- input -->
+                    <Grid Grid.Column="0">
+                        <Border Background="{DynamicResource InpuntOutputColor}" 
+                        BorderBrush="{DynamicResource DesingColor}" BorderThickness="2,0,0,0">
+                        </Border>
+                    </Grid>
+                    <!-- output -->
+                    <Grid Grid.Column="2">
+                        <Border Background="{DynamicResource InpuntOutputColor}" 
+                        BorderBrush="{DynamicResource DesingColor}" BorderThickness="0,0,2,0">
+                        </Border>
+                    </Grid>
+                </Grid>
+                <!-- info heading -->
+                <Grid Grid.Row="2" Background="{DynamicResource DesingColor}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <!-- roll up and unwrap button -->
+                    <Grid Grid.Column="1">
+                        <ToggleButton Click="HideRevealInfospace" ToolTip="{DynamicResource TextInfoSpaceTT}" 
+                        Focusable="False" Template="{DynamicResource RollUpInfospaceButtonStyle}"/>
+                    </Grid>
+                    <Grid Grid.Column="0">
+                        <TextBlock Margin="10,0,0,0" Text="{DynamicResource TextInformation}" 
+                                   Style="{DynamicResource ContentStyle}"/>
+                    </Grid>
+                </Grid>
+                <!-- info space -->
+                <Grid Grid.Row="3">
+                    <Border BorderBrush="{DynamicResource DesingColor}" BorderThickness="2,0,0,2">
+                        <Grid>
+                            <Frame NavigationUIVisibility="Hidden" Content="{Binding InfoPage}"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Grid>
+            <!-- devices list -->
+            <Grid Grid.Column="1">
+                <!-- sort buttons and list-->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <!-- sort buttons-->
+                <Grid Grid.Row="0" Background="{DynamicResource DesingColor}">
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="InputsOutputsButton" ToolTip="{DynamicResource TextInputsOutputs}" Command="{Binding OpenInputOutputPage}" Width="100" Content="{DynamicResource TextInputsOutputs}" Template="{DynamicResource SortedButtonsStyle}"/>
+                        <Button Width="85" ToolTip="{DynamicResource TextElemets}" Command="{Binding OpenBaseElementsPage}" Content="{DynamicResource TextElemets}" Template="{DynamicResource SortedButtonsStyle}"/>
+                        <Button Width="115" ToolTip="{DynamicResource TextHelperElements}" Command="{Binding OpenHelperElementsPage}" Content="{DynamicResource TextHelperElements}" Template="{DynamicResource SortedButtonsStyle}"/>
+                    </StackPanel>
+                </Grid>
+                <!-- list devices -->
+                <Grid Grid.Row="1">
+                    <Border BorderBrush="{DynamicResource DesingColor}" BorderThickness="2,0,2,2">
+                        <Frame NavigationUIVisibility="Hidden" Content="{Binding CurrentElementsPage}"/>
+                    </Border>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

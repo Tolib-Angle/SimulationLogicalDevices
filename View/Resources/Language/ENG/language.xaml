@@ -1,0 +1,130 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib">
+    <!-- ===================================================================================== -->
+    <!-- ||                           Language ENG                                          || -->
+    <!-- ===================================================================================== -->
+    
+    
+    <!-- main window text -->
+    <v:String x:Key="TextFile">File</v:String>
+    <v:String x:Key="TextSetting">Setting</v:String>
+    <v:String x:Key="TextHelp">Help</v:String>
+    <v:String x:Key="TextInputsOutputs">Input/Outputs</v:String>
+    <v:String x:Key="TextElemets">Base elements</v:String>
+    <v:String x:Key="TextHelperElements">Helper elements</v:String>
+    <v:String x:Key="TextInput">Number of inputs</v:String>
+    <v:String x:Key="TextOutput">Number of outputs</v:String>
+    <v:String x:Key="TextInformation">Information</v:String>
+    
+    <!-- setting window text -->
+    <v:String x:Key="TextOpenFile">Open</v:String>
+    <v:String x:Key="TextCreate">Create</v:String>
+    <v:String x:Key="TextSave">Save</v:String>
+    <v:String x:Key="TextSaveAll">Save all</v:String>
+    <v:String x:Key="TextTheme">Theme</v:String>
+    <v:String x:Key="TextLanguage">Language</v:String>
+    <v:String x:Key="TextDocumentation">Documentation</v:String>
+    <v:String x:Key="TextHotKey">Hot key</v:String>
+    <v:String x:Key="TextExamples">Examples</v:String>
+    <v:String x:Key="TextOk">Ok</v:String>
+    <v:String x:Key="TextCancel">Cancel</v:String>
+    <v:String x:Key="TextPath">Path</v:String>
+    <v:String x:Key="TextLastsOpen">Lasts open</v:String>
+    <v:String x:Key="TextProjectName">Project name</v:String>
+    <v:String x:Key="TextAuthor">Author</v:String>
+    <v:String x:Key="TextDescription">Description</v:String>
+    <v:String x:Key="TextRussia">Русский (RU)</v:String>
+    <v:String x:Key="TextEnglish">English (ENG)</v:String>
+    <v:String x:Key="TextDark">Dark</v:String>
+    <v:String x:Key="TextLight">Light</v:String>
+    
+    
+    <!-- Tool Tip -->
+    <v:String x:Key="TextCreateTT">Create new device (Ctrl+R)</v:String>
+    <v:String x:Key="TextOpenTT">Open device (Ctrl+O)</v:String>
+    <v:String x:Key="TextExampleTT">Example (Ctrl+E)</v:String>
+    <v:String x:Key="TextFeedbackTT">Feedback (Ctrl+')</v:String>
+    <v:String x:Key="TextSaveTT">Save device (Ctrl+S)</v:String>
+    <v:String x:Key="TextRollUpTT">Roll up</v:String>
+    <v:String x:Key="TextCollapseToWindowTT">Collapse to window</v:String>
+    <v:String x:Key="TextCloseTT">Close (Alt+F4)</v:String>
+    <v:String x:Key="TextCloseSettingTT">Close</v:String>
+    <v:String x:Key="TextAddTT">Add</v:String>
+    <v:String x:Key="TextFileTT">File (Ctrl + F)</v:String>
+    <v:String x:Key="TextSettingTT">Setting (Ctrl + G)</v:String>
+    <v:String x:Key="TextHelpTT">Help (Ctrl + H)</v:String>
+    <v:String x:Key="TextDeleteDeviceTT">Delete Devcie (Del)</v:String>
+    <v:String x:Key="TextTrainingPageTT">Training Page</v:String>
+    <v:String x:Key="TextInfoSpaceTT">Collapse (expand) the information space</v:String>
+
+    <!-- hot key text -->
+    <v:String x:Key="TextHotkeyOpen">Ctrl+O</v:String>
+    <v:String x:Key="TextHotkeyCreate">Ctrl+R</v:String>
+    <v:String x:Key="TextHotkeySave">Ctrl+S</v:String>
+    <v:String x:Key="TextHotkeySaveAll">Shift+Ctrl+S</v:String>
+    <v:String x:Key="TextHotkeyTheme">Ctrl+T</v:String>
+    <v:String x:Key="TextHotkeyLanguage">Ctrl+L</v:String>
+    <v:String x:Key="TextHotkeyProper">Ctrl+P</v:String>
+    <v:String x:Key="TextHotkeyDocum">Ctrl+D</v:String>
+    <v:String x:Key="TextHotkeyHotkey">Ctrl+K</v:String>
+    <v:String x:Key="TextHotkeyExit">Alt+F4</v:String>
+    <v:String x:Key="TextHotkeyExamples">Ctrl+E</v:String>
+    <v:String x:Key="TextHotkeyCopyDevice">Shift+D</v:String>
+    <v:String x:Key="TextHotkeyFile">Ctrl+F</v:String>
+    <v:String x:Key="TextHotkeySetting">Ctrl+G</v:String>
+    <v:String x:Key="TextHotkeyHelp">Ctrl+H</v:String>
+    <v:String x:Key="TextHotKeyDelete">Del</v:String>
+
+    <!-- description hot key -->
+    <v:String x:Key="TextDESOpen">Opens a previously created device</v:String>
+    <v:String x:Key="TextDESCreate">Allows you to create a new device</v:String>
+    <v:String x:Key="TextDESSave">Allows you to save the current device</v:String>
+    <v:String x:Key="TextDESSaveAll">Allows you to save all devices</v:String>
+    <v:String x:Key="TextDESTheme">Opens a window for changing the theme</v:String>
+    <v:String x:Key="TextDESLanguage">Opens a window for changing the language</v:String>
+    <v:String x:Key="TextDESProper">Opens the project settings editing window</v:String>
+    <v:String x:Key="TextDESDocum">Opens documentation</v:String>
+    <v:String x:Key="TextDESHotkey">Opens the hotkey window</v:String>
+    <v:String x:Key="TextDESExit">Closes the program</v:String>
+    <v:String x:Key="TextDESExamples">Opens the device assembly examples window</v:String>
+    <v:String x:Key="TextDESCopyDevice">Allows you to copy the selected device</v:String>
+    <v:String x:Key="TextDESFile">Opens the "File" window</v:String>
+    <v:String x:Key="TextDESSetting">Opens the "Setting" window</v:String>
+    <v:String x:Key="TextDESHelp">Opens the "Help" window</v:String>
+    <v:String x:Key="TextDESDelete">Deletes the selected element in the workspace</v:String>
+
+    <!-- text warning-->
+    <v:String x:Key="TextWarning">* - Fields marked with this sing must be filled in!</v:String>
+
+    <!-- devices name -->
+    <v:String x:Key="TextDEVNameGenerator">Generator</v:String>
+    <v:String x:Key="TextDEVNameLED">LED</v:String>
+    <v:String x:Key="TextDEVNameButton">Button</v:String>
+    <v:String x:Key="TextDEVNameAND">Logical "AND"</v:String>
+    <v:String x:Key="TextDEVNameOR">Logical "OR"</v:String>
+    <v:String x:Key="TextDEVNameNOT">Logical "NOT"</v:String>
+    <v:String x:Key="TextDEVNameXOR">Logical "XOR"</v:String>
+    <v:String x:Key="TextDEVNameAND_NOT">Logical "AND-NOT"</v:String>
+    <v:String x:Key="TextDEVNameOR_NOT">Logical "OR-NOT"</v:String>
+    <v:String x:Key="TextDEVNameD_Trigger">D-Trigger</v:String>
+    <v:String x:Key="TextDEVNameRS_Trigger">RS-Trigger</v:String>
+    <v:String x:Key="TextDEVNameCounter">Counter</v:String>
+    <v:String x:Key="TextDEVNameDelimiter">Delimiter</v:String>
+
+    <!-- description elemetns-->
+    <v:String x:Key="TextSLD">This program allows you to simulate the operation of digital devices. For modeling, you need to place the desired element in the workspace and connect it to others.</v:String>
+    <v:String x:Key="TextAND">The logical element "AND" is an elementary logical block that accepts two or more boolean (logical) signals as input and produces a "true" signal at the output only when all input signals are true. If at least one of the inputs is false, then the output will be false.</v:String>
+    <v:String x:Key="TextOR">An OR gate is a digital logic element that accepts two or more input signals and produces an output signal that is equal to the logical OR operation between those input signals. If at least one of the inputs is 1, then the output will be 1. Only if all the inputs are 0, then the output will be 0.</v:String>
+    <v:String x:Key="TextNOT">The NOT gate is a unary logical operator that inverts the value of the input signal. If "1" is input to the element, then the output will be "0", and if "0" is input, then the output will be "1".</v:String>
+    <v:String x:Key="TextANDNOT">The AND-NOT gate is a logical operation that is applied to two inputs and returns true (true) only if the first input is true and the second is false ). If the second input signal is true (true), then the result of the operation will be false (false).</v:String>
+    <v:String x:Key="TextORNOT">The NOT OR gate is a logical operation that returns true if only one of its inputs is false and the rest are true. If all inputs are true, then the OR-NOT element returns false.</v:String>
+    <v:String x:Key="TextXOR">The XOR (exclusive OR) gate is a binary operation that returns true if only one of the two inputs is true. If both inputs have the same value (both true or both false), then the result of the operation is false.</v:String>
+    <v:String x:Key="TextBUTTON">A button is a logical element that produces an output signal equal to one (logical "1") when pressed.</v:String>
+    <v:String x:Key="TextLED">LED is a logic element that converts a logic signal into visible light. When the LED is signaled with a value of "1", it lights up, and when it is signaled with a value of "0", it does not light.</v:String>
+    <v:String x:Key="TextGENERATOR">A logic element generator is a device that generates a logic signal with a fixed frequency or period when a button is pressed.</v:String>
+    <v:String x:Key="TextCOUNTER">The logical element counter is designed to count the number of received signals. It has an input to which logical signals are received, and an output to which the counter value is issued. Each time a signal is received at the input, the counter value is incremented by one. The counter has an additional input (R) for resetting the value to zero.</v:String>
+    <v:String x:Key="TextDTRIGGER">A D-flip-flop is a logic element that is used to store and transmit one bit of information. It has one input, called the data input (D), and two outputs: the status output (Q) and the inverted output (~Q). When a pulse is applied to the clock input (CLK), the D-flip-flop stores the value at the data input and outputs it to the outputs Q and ~Q.</v:String>
+    <v:String x:Key="TextRSTRIGGER">An RS flip-flop is a logic element that has two inputs: a reset input (R) and a set input (S). Inputs R and S are used to control the state of the flip-flop. If the R input is set to 1, then the flip-flop is placed in the reset state, and if the S input is set to 1, then the flip-flop is placed in the set state. If both inputs R and S are 1, then this can lead to an undefined trigger state. An RS flip-flop can be used to create more complex logic gates.</v:String>
+    <v:String x:Key="TextDELIMITER">A splitter is an auxiliary element that splits an input signal into multiple outputs. The output value is equal to the input value.</v:String>
+</ResourceDictionary>

@@ -1,0 +1,505 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- top bar pages -->
+    <ControlTemplate x:Key="PagesButtonStyle" TargetType="Button">
+        <Grid x:Name="WindowsBtnClose" Height="16" Width="16">
+            <Border>
+                <Image Source="{DynamicResource CloseIcon}"
+                           Height="14" Width="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=WindowsBtnClose}" Value="true">
+                                <Setter Property="Background" Value="{DynamicResource ButtonMouseOverBackgroundColor}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="DevicePagesButtonsStyle" TargetType="Button">
+        <Grid x:Name="DevicesBtn">
+            <Border>
+                <Grid>
+                    <Label Content="{TemplateBinding Content}" Background="Transparent" FontSize="12"
+                               VerticalAlignment="Center" HorizontalAlignment="Left">
+                        <Label.Style>
+                            <Style TargetType="Label">
+                                <Setter Property="Foreground" Value="{DynamicResource TextColor}"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Button}},
+                                            Path=IsPressed}" Value="true">
+                                        <Setter Property="Foreground" Value="{DynamicResource ActiveTextColor}"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Label.Style>
+                    </Label>
+                </Grid>
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="0,2,0,0"/>
+                        <Setter Property="Background" Value="{DynamicResource ButtonMouseOverBackgroundColor}"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=DevicesBtn}" Value="true">
+                                <Setter Property="BorderBrush" Value="{DynamicResource FocusingColor}"/>
+                                <Setter Property="BorderThickness" Value="0,2,0,0"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Button}},
+                                            Path=IsFocused}" Value="true">
+                                <Setter Property="Background" Value="{DynamicResource ButtonIsFocusBackgroundColor}"/>
+                                <Setter Property="BorderBrush" Value="{DynamicResource FocusingColor}"/>
+                                <Setter Property="BorderThickness" Value="0,2,0,0"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+    <!--device list buttons -->
+    <ControlTemplate x:Key="AddDeviceStyle" TargetType="Button">
+        <Grid x:Name="WindowsBtn" Height="16" Width="16">
+            <Border CornerRadius="16">
+                <Image Source="{DynamicResource AddDeviceIcon}"
+                           Height="16" Width="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=WindowsBtn}" Value="true">
+                                <Setter Property="Background" Value="{DynamicResource ButtonMouseOverBackgroundColor}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="DeviceListButtonsStyle" TargetType="Button">
+        <Grid x:Name="DevicesBtn">
+            <Border>
+                <Grid>
+                    <Label Content="{TemplateBinding Content}" Background="Transparent" FontSize="12"
+                               VerticalAlignment="Center" HorizontalAlignment="Left">
+                        <Label.Style>
+                            <Style TargetType="Label">
+                                <Setter Property="Foreground" Value="{DynamicResource TextColor}"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Button}},
+                                            Path=IsPressed}" Value="true">
+                                        <Setter Property="Foreground" Value="{DynamicResource ActiveTextColor}"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Label.Style>
+                    </Label>
+                </Grid>
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="2,0,0,0"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=DevicesBtn}" Value="true">
+                                <Setter Property="Background" Value="{DynamicResource ButtonIsFocusBackgroundColor}"/>
+                                <Setter Property="BorderBrush" Value="{DynamicResource FocusingColor}"/>
+                                <Setter Property="BorderThickness" Value="2,0,0,0"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+    <!-- workspace top bar buttons style -->
+    <Style x:Key="TopBarBtnStyle" TargetType="Button">
+        <Setter Property="Background" Value="{DynamicResource ButtonMouseOverBackgroundColor}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ButtonMouseOverBackgroundColor}"/>
+        <Setter Property="BorderThickness" Value="0,2,0,0"/>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Button}},
+                                            Path=IsFocused}" Value="true">
+                <Setter Property="Foreground" Value="{DynamicResource ActiveTextColor}"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource FocusingColor}"/>
+                <Setter Property="BorderThickness" Value="0,2,0,0"/>
+                <Setter Property="Margin" Value="0,2,0,0"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+    <ControlTemplate x:Key="CloseTopBarButtonStyle" TargetType="Button">
+        <Grid x:Name="WindowsBtnClose" Height="24" Width="24">
+            <Border>
+                <Image Source="{DynamicResource CloseIcon}"
+                           Height="14" Width="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=WindowsBtnClose}" Value="true">
+                                <Setter Property="Background" Value="{DynamicResource ButtonIsFocusBackgroundColor}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+    <!-- menu setting window buttons style -->
+    <ControlTemplate x:Key="OpenFileStyle" TargetType="Button">
+        <Grid x:Name="WindowsBtn" Height="30" Width="30">
+            <Border>
+                <Image Source="{DynamicResource OpenIcon}"
+                           Height="16" Width="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=WindowsBtn}" Value="true">
+                                <Setter Property="Background" Value="{DynamicResource ButtonMouseOverBackgroundColor}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="MenuButtonsStyle" TargetType="ToggleButton">
+        <Grid x:Name="WindowsToggleBtn" Background="Transparent">
+            <Border BorderThickness="1">
+                <StackPanel Orientation="Horizontal">
+                    <Image Height="16" Width="16">
+                        <Image.Style>
+                            <Style TargetType="Image">
+                                <Setter Property="Source" Value="{DynamicResource RevealIcon}"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}},
+                                                                     Path=IsChecked}" Value="true">
+                                        <Setter Property="Source" Value="{DynamicResource HideIcon}"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                    </Image>
+                    <Label Content="{TemplateBinding Content}" Background="Transparent" FontSize="14"
+                               VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Label.Style>
+                            <Style TargetType="Label">
+                                <Setter Property="Foreground" Value="{DynamicResource TextColor}"/>
+                            </Style>
+                        </Label.Style>
+                    </Label>
+                </StackPanel>
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=WindowsToggleBtn}" Value="true">
+                                <Setter Property="Background" Value="{DynamicResource ButtonMouseOverBackgroundColor}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="WindowsTabsButtonsStyle" TargetType="Button">
+        <Grid x:Name="DevicesBtn" Height="30">
+            <Border>
+                <Grid>
+                    <Label Content="{TemplateBinding Content}" Background="Transparent" FontSize="12"
+                               VerticalAlignment="Center" HorizontalAlignment="Left">
+                        <Label.Style>
+                            <Style TargetType="Label">
+                                <Setter Property="Foreground" Value="{DynamicResource TextColor}"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Button}},
+                                            Path=IsPressed}" Value="true">
+                                        <Setter Property="Foreground" Value="{DynamicResource ActiveTextColor}"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Button}},
+                                            Path=IsFocused}" Value="true">
+                                        <Setter Property="Margin" Value="0,2,0,0"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Label.Style>
+                    </Label>
+                </Grid>
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=DevicesBtn}" Value="true">
+                                <Setter Property="Background" Value="{DynamicResource ButtonMouseOverBackgroundColor}"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Button}},
+                                            Path=IsFocused}" Value="true">
+                                <Setter Property="Background" Value="{DynamicResource ButtonIsFocusBackgroundColor}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+    <!-- top menu buttons style -->
+    <ControlTemplate x:Key="TopMenuButtonsStyle" TargetType="Button">
+        <Grid x:Name="TopMenuBtn" Height="30">
+            <Border BorderThickness="1">
+                <Grid Margin="10,0,10,0">
+                    <Label Content="{TemplateBinding Content}" Background="Transparent" FontSize="14"
+                               VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Label.Style>
+                            <Style TargetType="Label">
+                                <Setter Property="Foreground" Value="{DynamicResource TextColor}"/>
+                            </Style>
+                        </Label.Style>
+                    </Label>
+                </Grid>
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, 
+                                AncestorType={x:Type Button}}, Path=IsPressed}" Value="true">
+                                <Setter Property="Margin" Value="0,2,0,0"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=TopMenuBtn}" Value="true">
+                                <Setter Property="Background" Value="{DynamicResource ButtonMouseOverBackgroundColor}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+    <!-- window manager buttons style -->
+    <ControlTemplate x:Key="CloseButtonStyle" TargetType="Button">
+        <Grid x:Name="WindowsBtnClose" Height="30" Width="30">
+            <Border>
+                <Image Source="{DynamicResource CloseIcon}"
+                           Height="16" Width="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=WindowsBtnClose}" Value="true">
+                                <Setter Property="Background" Value="{DynamicResource BackgroundCloseButtonColor}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="RollUpButtonStyle" TargetType="Button">
+        <Grid x:Name="WindowsBtn" Height="30" Width="30">
+            <Border>
+                <Image Source="{DynamicResource RollUpIcon}"
+                           Height="16" Width="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=WindowsBtn}" Value="true">
+                                <Setter Property="Background" Value="{DynamicResource ButtonMouseOverBackgroundColor}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="UnwrapButtonStyle" TargetType="ToggleButton">
+        <Grid x:Name="WindowsToggleBtn" Height="30" Width="30" Background="Transparent">
+            <Border BorderThickness="1">
+                <Image Height="16" Width="16">
+                    <Image.Style>
+                        <Style TargetType="Image">
+                            <Setter Property="Source" Value="{DynamicResource UnwrapIcon}"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}},
+                                                                     Path=IsChecked}" Value="true">
+                                    <Setter Property="Source" Value="{DynamicResource CollapseToWindowIcon}"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=WindowsToggleBtn}" Value="true">
+                                <Setter Property="Background" Value="{DynamicResource ButtonMouseOverBackgroundColor}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+    <!-- Sorted buttons style -->
+    <ControlTemplate x:Key="SortedButtonsStyle" TargetType="Button">
+        <Grid x:Name="DevicesBtn" Height="30">
+            <Border>
+                <Grid>
+                    <Label Content="{TemplateBinding Content}" Background="Transparent" FontSize="12"
+                               VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Label.Style>
+                            <Style TargetType="Label">
+                                <Setter Property="Foreground" Value="{DynamicResource TextColor}"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Button}},
+                                            Path=IsFocused}" Value="true">
+                                        <Setter Property="Foreground" Value="{DynamicResource ActiveTextColor}"/>
+                                        <Setter Property="Margin" Value="0,2,0,0"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Label.Style>
+                    </Label>
+                </Grid>
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=DevicesBtn}" Value="true">
+                                <Setter Property="Background" Value="{DynamicResource ButtonIsFocusBackgroundColor}"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Button}},
+                                            Path=IsFocused}" Value="true">
+                                <Setter Property="BorderBrush" Value="{DynamicResource FocusingColor}"/>
+                                <Setter Property="BorderThickness" Value="0,2,0,0"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+    <!-- info space button style -->
+    <ControlTemplate x:Key="RollUpInfospaceButtonStyle" TargetType="ToggleButton">
+        <Grid x:Name="InformationToggleBtn" Height="30" Width="30" Background="Transparent">
+            <Border BorderThickness="1">
+                <Image Height="16" Width="16">
+                    <Image.Style>
+                        <Style TargetType="Image">
+                            <Setter Property="Source" Value="{DynamicResource DownIcon}"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}},
+                                                                     Path=IsChecked}" Value="true">
+                                    <Setter Property="Source" Value="{DynamicResource UpIcon}"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=InformationToggleBtn}" Value="true">
+                                <Setter Property="Background" Value="{DynamicResource ButtonIsFocusBackgroundColor}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+    <!-- quick access buttons styles -->
+    <ControlTemplate x:Key="OpenProjectButtonStyle" TargetType="Button">
+        <Grid x:Name="WindowsBtn" Height="24" Width="24">
+            <Border>
+                <Image Source="{DynamicResource OpenIcon}"
+                           Height="16" Width="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=WindowsBtn}" Value="true">
+                                <Setter Property="Background" Value="{DynamicResource ButtonMouseOverBackgroundColor}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="AddProjectButtonStyle" TargetType="Button">
+        <Grid x:Name="WindowsBtn" Height="24" Width="24">
+            <Border>
+                <Image Source="{DynamicResource CreateIcon}"
+                           Height="16" Width="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=WindowsBtn}" Value="true">
+                                <Setter Property="Background" Value="{DynamicResource ButtonMouseOverBackgroundColor}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="SaveProjectButtonStyle" TargetType="Button">
+        <Grid x:Name="WindowsBtn" Height="24" Width="24">
+            <Border>
+                <Image Source="{DynamicResource SaveIcon}"
+                           Height="16" Width="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=WindowsBtn}" Value="true">
+                                <Setter Property="Background" Value="{DynamicResource ButtonMouseOverBackgroundColor}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="FeedbackProjectButtonStyle" TargetType="Button">
+        <Grid x:Name="WindowsBtn" Height="24" Width="24">
+            <Border>
+                <Image Source="{DynamicResource FeedbackIcon}"
+                           Height="16" Width="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=WindowsBtn}" Value="true">
+                                <Setter Property="Background" Value="{DynamicResource ButtonMouseOverBackgroundColor}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="DeleteDeviceButtonStyle" TargetType="Button">
+        <Grid x:Name="WindowsBtn" Height="24" Width="24">
+            <Border>
+                <Image Source="{DynamicResource DeleteDeviceIcon}"
+                           Height="16" Width="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=WindowsBtn}" Value="true">
+                                <Setter Property="Background" Value="{DynamicResource ButtonMouseOverBackgroundColor}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="ProperProjectButtonStyle" TargetType="Button">
+        <Grid x:Name="WindowsBtn" Height="24" Width="24">
+            <Border>
+                <Image Source="{DynamicResource ProperIcon}"
+                           Height="16" Width="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=WindowsBtn}" Value="true">
+                                <Setter Property="Background" Value="{DynamicResource ButtonMouseOverBackgroundColor}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+</ResourceDictionary>

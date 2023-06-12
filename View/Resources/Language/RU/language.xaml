@@ -1,0 +1,130 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib">
+    <!-- ===================================================================================== -->
+    <!-- ||                           Language RU                                           || -->
+    <!-- ===================================================================================== -->
+
+
+    <!-- main window text -->
+    <v:String x:Key="TextFile">Файл</v:String>
+    <v:String x:Key="TextSetting">Настройка</v:String>
+    <v:String x:Key="TextHelp">Помощь</v:String>
+    <v:String x:Key="TextInputsOutputs">Вход/Выход</v:String>
+    <v:String x:Key="TextElemets">Базовые элементы</v:String>
+    <v:String x:Key="TextHelperElements">Вспомогательные элементы</v:String>
+    <v:String x:Key="TextInput">К-во входов</v:String>
+    <v:String x:Key="TextOutput">К-во выходов</v:String>
+    <v:String x:Key="TextInformation">Информация</v:String>
+
+    <!-- setting window text -->
+    <v:String x:Key="TextOpenFile">Открыть</v:String>
+    <v:String x:Key="TextCreate">Создать</v:String>
+    <v:String x:Key="TextSave">Сохранить</v:String>
+    <v:String x:Key="TextSaveAll">Сохранить все</v:String>
+    <v:String x:Key="TextTheme">Темы</v:String>
+    <v:String x:Key="TextLanguage">Языки</v:String>
+    <v:String x:Key="TextDocumentation">Документация</v:String>
+    <v:String x:Key="TextHotKey">Горячие клавиши</v:String>
+    <v:String x:Key="TextExamples">Примеры</v:String>
+    <v:String x:Key="TextOk">Применить</v:String>
+    <v:String x:Key="TextCancel">Назад</v:String>
+    <v:String x:Key="TextPath">Путь</v:String>
+    <v:String x:Key="TextLastsOpen">Последные пути</v:String>
+    <v:String x:Key="TextProjectName">Имя проекта</v:String>
+    <v:String x:Key="TextAuthor">Автор</v:String>
+    <v:String x:Key="TextDescription">Описание</v:String>
+    <v:String x:Key="TextRussia">Русский (RU)</v:String>
+    <v:String x:Key="TextEnglish">English (ENG)</v:String>
+    <v:String x:Key="TextDark">Темная</v:String>
+    <v:String x:Key="TextLight">Светлая</v:String>
+
+
+    <!-- Tool Tip -->
+    <v:String x:Key="TextCreateTT">Создать новое устройство (Ctrl+R)</v:String>
+    <v:String x:Key="TextOpenTT">Открыть устройство (Ctrl+O)</v:String>
+    <v:String x:Key="TextExampleTT">Примеры (Ctrl+E)</v:String>
+    <v:String x:Key="TextFeedbackTT">Отзыв (Ctrl+')</v:String>
+    <v:String x:Key="TextSaveTT">Сохранить устройство (Ctrl+S)</v:String>
+    <v:String x:Key="TextRollUpTT">Свернуть</v:String>
+    <v:String x:Key="TextCollapseToWindowTT">Свернуть в окно</v:String>
+    <v:String x:Key="TextCloseTT">Закрыть (Alt+F4)</v:String>
+    <v:String x:Key="TextCloseSettingTT">Закрыть</v:String>
+    <v:String x:Key="TextAddTT">Добавить</v:String>
+    <v:String x:Key="TextFileTT">Файл (Ctrl+F)</v:String>
+    <v:String x:Key="TextSettingTT">Настройки (Ctrl+G)</v:String>
+    <v:String x:Key="TextHelpTT">Помощь (Ctrl+H)</v:String>
+    <v:String x:Key="TextDeleteDeviceTT">Удалить устройство (Del)</v:String>
+    <v:String x:Key="TextTrainingPageTT">Тренировочная страница</v:String>
+    <v:String x:Key="TextInfoSpaceTT">Свернуть информационное поле</v:String>
+
+    <!-- hot key text -->
+    <v:String x:Key="TextHotkeyOpen">Ctrl+O</v:String>
+    <v:String x:Key="TextHotkeyCreate">Ctrl+R</v:String>
+    <v:String x:Key="TextHotkeySave">Ctrl+S</v:String>
+    <v:String x:Key="TextHotkeySaveAll">Shift+Ctrl+S</v:String>
+    <v:String x:Key="TextHotkeyTheme">Ctrl+T</v:String>
+    <v:String x:Key="TextHotkeyLanguage">Ctrl+L</v:String>
+    <v:String x:Key="TextHotkeyProper">Ctrl+P</v:String>
+    <v:String x:Key="TextHotkeyDocum">Ctrl+D</v:String>
+    <v:String x:Key="TextHotkeyHotkey">Ctrl+K</v:String>
+    <v:String x:Key="TextHotkeyExit">Alt+F4</v:String>
+    <v:String x:Key="TextHotkeyExamples">Ctrl+E</v:String>
+    <v:String x:Key="TextHotkeyCopyDevice">Shift+D</v:String>
+    <v:String x:Key="TextHotkeyFile">Ctrl+F</v:String>
+    <v:String x:Key="TextHotkeySetting">Ctrl+G</v:String>
+    <v:String x:Key="TextHotkeyHelp">Ctrl+H</v:String>
+    <v:String x:Key="TextHotKeyDelete">Del</v:String>
+
+    <!-- description hot key -->
+    <v:String x:Key="TextDESOpen">Открывает ранее созданное устройство</v:String>
+    <v:String x:Key="TextDESCreate">Позволяет создать новое устройство</v:String>
+    <v:String x:Key="TextDESSave">Позволяет сохранить текущее устройство</v:String>
+    <v:String x:Key="TextDESSaveAll">Позволяет сохранить все устройства</v:String>
+    <v:String x:Key="TextDESTheme">Открывает окно для смены темы</v:String>
+    <v:String x:Key="TextDESLanguage">Открывает окно для смены языка</v:String>
+    <v:String x:Key="TextDESProper">Открывает окно редактирования настроек проекта</v:String>
+    <v:String x:Key="TextDESDocum">Открывает документацию</v:String>
+    <v:String x:Key="TextDESHotkey">Открывает окно горячих клавиш</v:String>
+    <v:String x:Key="TextDESExit">Закрывает программу</v:String>
+    <v:String x:Key="TextDESExamples">Открывает окно примеров сборки устройства</v:String>
+    <v:String x:Key="TextDESCopyDevice">Позволяет скопировать выбранное устройство</v:String>
+    <v:String x:Key="TextDESFile">Открывает окно "Файл"</v:String>
+    <v:String x:Key="TextDESSetting">Открывает окно "Настройка"</v:String>
+    <v:String x:Key="TextDESHelp">Открывает окно "Помощь"</v:String>
+    <v:String x:Key="TextDESDelete">Удаляет выделенное устройство с рабочего пространства</v:String>
+
+    <!-- text warning-->
+    <v:String x:Key="TextWarning">* - Поля, выделенные данным символом. Обязательно к заполнению!</v:String>
+
+    <!-- devices name -->
+    <v:String x:Key="TextDEVNameGenerator">Генератор</v:String>
+    <v:String x:Key="TextDEVNameLED">Светодиод</v:String>
+    <v:String x:Key="TextDEVNameButton">Кнопка</v:String>
+    <v:String x:Key="TextDEVNameAND">Логический "И"</v:String>
+    <v:String x:Key="TextDEVNameOR">Логический "ИЛИ"</v:String>
+    <v:String x:Key="TextDEVNameNOT">Логический "НЕ"</v:String>
+    <v:String x:Key="TextDEVNameXOR">Логический "Ис. ИЛИ"</v:String>
+    <v:String x:Key="TextDEVNameAND_NOT">Логический "И-НЕ"</v:String>
+    <v:String x:Key="TextDEVNameOR_NOT">Логический "ИЛИ-НЕ"</v:String>
+    <v:String x:Key="TextDEVNameD_Trigger">D-Триггер</v:String>
+    <v:String x:Key="TextDEVNameRS_Trigger">RS-Триггер</v:String>
+    <v:String x:Key="TextDEVNameCounter">Счетчик</v:String>
+    <v:String x:Key="TextDEVNameDelimiter">Разделитель</v:String>
+
+    <!-- description elemetns-->
+    <v:String x:Key="TextSLD">Программа SLD позволяет моделировать работу цифровых устройств. Для моделирования нужно разместить необходимые элементы в рабочей области и соединить их с другими.</v:String>
+    <v:String x:Key="TextAND">Логический элемент «И» представляет собой элементарный логический блок, который принимает на вход два или более булевых (логических) сигнала и выдает на выходе сигнал «истина» только тогда, когда все входные сигналы истинны. Если хотя бы один из входов ложный, то и выход будет ложным.</v:String>
+    <v:String x:Key="TextOR">Элемент ИЛИ — это цифровой логический элемент, который принимает два или более входных сигнала и создает выходной сигнал, равный логической операции ИЛИ между этими входными сигналами. Если хотя бы один из входов равен 1, то на выходе будет 1. Только если на всех входах 0, то на выходе будет 0.</v:String>
+    <v:String x:Key="TextNOT">Вентиль НЕ — это унарный логический оператор, который инвертирует значение входного сигнала. Если в элемент вводится «1», то на выходе будет «0», а если на входе «0», то на выходе будет «1».</v:String>
+    <v:String x:Key="TextANDNOT">Вентиль И-НЕ — это логическая операция, которая применяется к двум (или более) входным данным и возвращает ложь только в том случае, если все входные значение равен «1».</v:String>
+    <v:String x:Key="TextORNOT">Вентиль НЕ ИЛИ — это логическая операция, которая возвращает истину, если только все входные значение ложные. Если хотя бы один вход равен «1», то элемент ИЛИ-НЕ возвращает ложь.</v:String>
+    <v:String x:Key="TextXOR">Вентиль XOR (исключающее ИЛИ) — это бинарная операция, которая возвращает значение true, если истинно только одно из двух входных значений. Если оба входа имеют одинаковое значение (оба истинны или оба ложны), то результат операции будет ложным.</v:String>
+    <v:String x:Key="TextBUTTON">Кнопка — это логический элемент, который при нажатии выдает выходной сигнал, равный единице (логическая «1»).</v:String>
+    <v:String x:Key="TextLED">Светодиод — это логический элемент, преобразующий логический сигнал в видимый свет. Когда светодиод на вход получает значение «1», он загорается, а когда получает значение «0», он не горит.</v:String>
+    <v:String x:Key="TextGENERATOR">Генератор логических элементов — это устройство, которое генерирует логический сигнал с фиксированной частотой при нажатии кнопки.</v:String>
+    <v:String x:Key="TextCOUNTER">Счетчик логических элементов предназначен для подсчета количества принятых сигналов. Он имеет вход, на который поступают логические сигналы, и выход, на который выдается значение счетчика. Каждый раз, когда на вход поступает сигнал, значение счетчика увеличивается на единицу. Счетчик имеет дополнительный вход (R) для сброса значения на ноль.</v:String>
+    <v:String x:Key="TextDTRIGGER">D-триггер — это логический элемент, который используется для хранения и передачи одного бита информации. Он имеет два входа, первый называется входом данных (D), а второй входом синхронизация (С) и два выхода: выход состояния (Q) и инвертированный выход (~Q). При подаче импульса на вход данных D-триггер сохраняет значение на входе данных и выдает его на выходы Q и ~Q если на входе синхронизации (С) было значение 1.</v:String>
+    <v:String x:Key="TextRSTRIGGER">RS-триггер — это логический элемент, который имеет два входа: вход сброса (R) и вход установки (S). Входы R и S используются для управления состоянием триггера. Если на входе R установлено значение 1, то триггер переводится в состояние сброса, а если на входе S установлено значение 1, то триггер переводится в состояние установки. Если оба входа R и S равны 1, это может привести к неопределенному состоянию триггера (чтобы сбросить данное состояние необходимо подать сигналь на вход сброса). RS-триггер можно использовать для создания более сложных логических элементов..</v:String>
+    <v:String x:Key="TextDELIMITER">Разделитель — вспомогательный элемент, разделяющий входной сигнал на несколько выходов. Выходное значение равно входному значению.</v:String>
+</ResourceDictionary>

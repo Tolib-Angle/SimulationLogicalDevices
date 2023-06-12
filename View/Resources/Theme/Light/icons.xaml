@@ -1,0 +1,29 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--icons for window navigation buttons-->
+    <ImageSource x:Key="CloseIcon">\View\Resources\Icons\Light\close.png</ImageSource>
+    <ImageSource x:Key="CollapseToWindowIcon">\View\Resources\Icons\Light\collapse_to_window.png</ImageSource>
+    <ImageSource x:Key="RollUpIcon">\View\Resources\Icons\Light\roll_up.png</ImageSource>
+    <ImageSource x:Key="UnwrapIcon">\View\Resources\Icons\Light\unwrap.png</ImageSource>
+    <ImageSource x:Key="DownIcon">\View\Resources\Icons\Light\down.png</ImageSource>
+    <ImageSource x:Key="UpIcon">\View\Resources\Icons\Light\up.png</ImageSource>
+    <ImageSource x:Key="OpenIcon">\View\Resources\Icons\Light\open_file.png</ImageSource>
+    <ImageSource x:Key="CreateIcon">\View\Resources\Icons\Light\add.png</ImageSource>
+    <ImageSource x:Key="SaveIcon">\View\Resources\Icons\Light\save.png</ImageSource>
+    <ImageSource x:Key="SaveAllIcon">\View\Resources\Icons\Light\save_all.png</ImageSource>
+    <ImageSource x:Key="FeedbackIcon">\View\Resources\Icons\Light\feedback.png</ImageSource>
+    <ImageSource x:Key="RevealIcon">\View\Resources\Icons\Light\reveal.png</ImageSource>
+    <ImageSource x:Key="HideIcon">\View\Resources\Icons\Light\hide.png</ImageSource>
+    <ImageSource x:Key="HotKeyIcon">\View\Resources\Icons\Light\hotkey.png</ImageSource>
+    <ImageSource x:Key="LanguageIcon">\View\Resources\Icons\Light\language.png</ImageSource>
+    <ImageSource x:Key="ThemeIcon">\View\Resources\Icons\Light\themes.png</ImageSource>
+    <ImageSource x:Key="ProperIcon">\View\Resources\Icons\Light\properties.png</ImageSource>
+    <ImageSource x:Key="AddDeviceIcon">\View\Resources\Icons\Light\add_device.png</ImageSource>
+    <ImageSource x:Key="DeleteDeviceIcon">\View\Resources\Icons\Light\delete.png</ImageSource>
+    <!--logo icons-->
+    <ImageSource x:Key="LogoIcon">\View\Resources\Icons\logo.png</ImageSource>
+    <!-- examples images -->
+    <ImageSource x:Key="DarkIcon">\View\Resources\Examples\dark.png</ImageSource>
+    <ImageSource x:Key="LightIcon">\View\Resources\Examples\light.png</ImageSource>
+    <ImageSource x:Key="NoImage">\View\Resources\Examples\no_image.png</ImageSource>
+</ResourceDictionary>

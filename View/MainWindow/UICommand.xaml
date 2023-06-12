@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- routed UI command -->
+    <RoutedUICommand x:Key="ClickFileButton"/>
+    <RoutedUICommand x:Key="ClickSettingButton"/>
+    <RoutedUICommand x:Key="ClickHelpButton"/>
+    <RoutedUICommand x:Key="ClickOpenButton"/>
+    <RoutedUICommand x:Key="ClickCreateButton"/>
+    <RoutedUICommand x:Key="ClickSaveButton"/>
+    <RoutedUICommand x:Key="ClickSaveAllButton"/>
+    <RoutedUICommand x:Key="ClickFeedbackButton"/>
+    <RoutedUICommand x:Key="ClickThemeButton"/>
+    <RoutedUICommand x:Key="ClickLanguageButton"/>
+    <RoutedUICommand x:Key="ClickProperButton"/>
+    <RoutedUICommand x:Key="ClickDocumButton"/>
+    <RoutedUICommand x:Key="ClickHotkeyButton"/>
+    <RoutedUICommand x:Key="CloseButton"/>
+    <RoutedUICommand x:Key="DeleteDevice"/>
+</ResourceDictionary>

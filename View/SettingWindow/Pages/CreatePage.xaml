@@ -1,0 +1,29 @@
+﻿<Page x:Class="SimulatorLogicDevices.View.SettingWindow.Pages.CreatePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SimulatorLogicDevices.View.SettingWindow.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CreatePage" FontFamily="Georgia">
+    <Grid Margin="10">
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBlock Margin="0,0,0,10" Text="{DynamicResource TextProjectName}" Style="{DynamicResource ContentStyle}"/>
+                <TextBlock Margin="6,0,0,0" Text="*" Style="{DynamicResource DangerousBlockStyle}"/>
+            </StackPanel>
+            <TextBox x:Name="DeviceName" MouseLeftButtonDown="ClearFocus" Margin="0,0,0,10" Style="{DynamicResource InputsBoxStyle}"/>
+            <TextBlock Text="{DynamicResource TextPath}" Style="{DynamicResource ContentStyle}"/>
+            <StackPanel Margin="0,10,0,0" VerticalAlignment="Center" Orientation="Horizontal">
+                <TextBox x:Name="PathProject" Style="{DynamicResource InputsBoxStyle}"/>
+                <Button Click="OpenPathForCreateDevice" Template="{DynamicResource OpenFileStyle}"/>
+            </StackPanel>
+            <TextBlock Margin="0,10,0,10" Text="{DynamicResource TextAuthor}" Style="{DynamicResource ContentStyle}"/>
+            <TextBox Style="{DynamicResource InputsBoxStyle}"/>
+            <TextBlock Margin="0,10,0,10" Text="{DynamicResource TextDescription}" Style="{DynamicResource ContentStyle}"/>
+            <TextBox Style="{DynamicResource InputsBoxDesStyle}"/>
+            <TextBlock Text="{DynamicResource TextWarning}" Margin="0,10,0,10" Style="{DynamicResource DangerousBlockStyle}"/>
+        </StackPanel>
+    </Grid>
+</Page>

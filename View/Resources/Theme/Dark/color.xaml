@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--==========================================================================================-->
+    <!--|                                  DARK                                                  |-->
+    <!--==========================================================================================-->
+    <Brush x:Key="BackgroundColor">#212121</Brush>
+    <Brush x:Key="TextColor">#F5F5F5</Brush>
+    <Brush x:Key="ActiveTextColor">#FAFAFA</Brush>
+    <Brush x:Key="BackgroundCloseButtonColor">#D50000</Brush>
+    <Brush x:Key="ButtonMouseOverBackgroundColor">#424242</Brush>
+    <Brush x:Key="ButtonIsFocusBackgroundColor">#616161</Brush>
+    <Brush x:Key="DesingColor">#424242</Brush>
+    <Brush x:Key="InpuntOutputColor">#616161</Brush>
+    <Brush x:Key="DangerColor">#F44336</Brush>
+    <Brush x:Key="HotKeyBorderColor">#2196F3</Brush>
+
+    <Brush x:Key="FocusingColor">#64B5F6</Brush>
+    
+    <!-- elements color -->
+    <Brush x:Key="ElementBackgroundColor">#9E9E9E</Brush>
+    <Brush x:Key="ElementActiveBorderColor">#64B5F6</Brush>
+    <Brush x:Key="ElementButtonShadowColor">#212121</Brush>
+    <Brush x:Key="ElementButtonColor">#EF5350</Brush>
+    <Brush x:Key="ElementPortBackgroundColor">#616161</Brush>
+    <Brush x:Key="ElementPushPortBackgroundColor">#EF5350</Brush>
+    <Brush x:Key="ElementPortBorderColor">#212121</Brush>
+    <Brush x:Key="ElementLedColor">#212121</Brush>
+</ResourceDictionary>

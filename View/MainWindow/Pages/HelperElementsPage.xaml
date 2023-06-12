@@ -1,0 +1,23 @@
+﻿<Page x:Class="SimulatorLogicDevices.View.MainWindow.Pages.HelperElementsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SimulatorLogicDevices.View.MainWindow.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="HelperElementsPage" FontFamily="Georgia">
+    <Grid>
+        <ScrollViewer Focusable="False" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+            <StackPanel Orientation="Vertical">
+                <Button MouseDoubleClick="AddElementDelimiter" Template="{DynamicResource DeviceListButtonsStyle}" Focusable="False">
+                    <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Margin="10,4,10,4">
+                        <Image Height="40" Margin="0,0,20,0" Source="{DynamicResource NoImage}"/>
+                        <TextBlock Width="180" Text="{DynamicResource TextDEVNameDelimiter}" Style="{DynamicResource ContentStyle}"/>
+                        <Button Click="AddElementDelimiter" Focusable="False" ToolTip="{DynamicResource TextAddTT}" Template="{DynamicResource AddDeviceStyle}"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
